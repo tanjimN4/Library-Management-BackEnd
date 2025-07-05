@@ -4,13 +4,14 @@ import { IBook } from "../interfaces/book.interface";
 
 const bookSchema = new Schema<IBook>(
     {
-        title: { type: String, required: true },
+        title: { type: String, required: true, trim: true },
         author: { type: String, required: true },
         genre: { type: String, required: true },
         isbn: { type: String, required: true, unique: true },
-        description: { type: String },
+        description: { type: String ,trim:true },
         copies: { type: Number, required: true },
-        available: { type: Number, required: true, default: 0 },
+        available: { type: Boolean, required: true, },
+        image:{type:String,required:true}
     },
     {
         timestamps: true,
